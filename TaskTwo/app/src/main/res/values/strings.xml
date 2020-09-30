@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TaskTwo</string>
+    <string name="settings">Settings</string>
+    <string name="via">Via</string>
+    <string name="whats_app_web">Whats App Web</string>
+    <string name="context_menu">Context Menu</string>
+    <string name="copy">Copy</string>
+    <string name="select">Select</string>
+</resources>

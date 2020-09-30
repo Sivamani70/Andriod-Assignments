@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TaskOne</string>
+    <string name="enter_name_or_number">Enter Name or Number</string>
+    <string name="send">Send</string>
+    <string name="call">Call</string>
+    <string name="camera">Camera</string>
+</resources>
