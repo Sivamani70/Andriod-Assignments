@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Reg_17MCA049L</string>
+    <string name="student_registration_form">Student Registration Form</string>
+    <string name="enter_roll_number">Enter Roll Number</string>
+    <string name="name">Name</string>
+    <string name="mail_id">Mail Id</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="female">FeMale</string>
+    <string name="male">Male</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="send_data">Send Data</string>
+    <string name="science">Science</string>
+    <string name="computer_applications">Computers</string>
+    <string name="arts">Arts</string>
+    <string name="electrical">Electrical</string>
+    <string name="select_branch">Select Branch</string>
+</resources>
