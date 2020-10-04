@@ -41,20 +41,23 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject rootObject = new JSONObject(response.body());
                     JSONArray itemsArray = rootObject.getJSONArray("items");
 
-                    JSONObject jsonObject;
+
                     Log.d("Response Data", "onResponse: " + itemsArray.length());
-//                    for (int i = 0; i < itemsArray.length(); i++) {
-                    jsonObject = itemsArray.getJSONObject(0);
-
-                    JSONObject volumeObj = jsonObject.getJSONObject("volumeInfo");
-                    final String title = volumeObj.getString("title");
-                    final JSONArray authors = volumeObj.getJSONArray("authors");
-                    final String description = volumeObj.getString("description");
-                    final String author = authors.getString(0);
-
-                    Log.d("Response Data", "onResponse: " + volumeObj.getString("description"));
-                    dataProviders.add(new DataProvider(description, title, author));
-//                    }
+                    /*
+                     *API is having only proper values for the 3 array
+                     * From there some of the fields are missing the authors and description items
+                     * so that is why taking count < 3
+                     * */
+                    for (int i = 0; i < 3; i++) {
+                        final JSONObject jsonObject = itemsArray.getJSONObject(i);
+                        final JSONObject volumeObj = jsonObject.getJSONObject("volumeInfo");
+                        final String title = volumeObj.getString("title");
+                        Log.d("Response Data", "onResponse: title " + title);
+                        final String description = volumeObj.getString("description");
+                        final JSONArray authors = volumeObj.getJSONArray("authors");
+                        Log.d("Response Data", "onResponse: authors " + authors);
+                        dataProviders.add(new DataProvider(description, title, authors.toString()));
+                    }
 
 
                     DataAdapter adapter = new DataAdapter(MainActivity.this, dataProviders);
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
                 } catch (Exception e) {
                     Toast.makeText(MainActivity.this, "Something went Wrong" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Log.d("Response Data", "onResponse: " + "No author Found");
+
                 }
             }
 
